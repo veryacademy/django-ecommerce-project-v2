@@ -1,6 +1,17 @@
 # E-commerce V2
 
 
+
+
+
+# Topics Covered
+
+- Creating custom fields 
+cas = models.CharField(max_length=11, validators=[RegexValidator(r'^\d\d-\d\d-\d\d-\d\d$')])
+
+
+
+
 # Topics
 
 1.0 Product Inventory
