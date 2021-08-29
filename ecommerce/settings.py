@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Local applications
     "ecommerce.inventory",
+    "ecommerce.dashboard",
     # External applications
     "mptt",
 ]
