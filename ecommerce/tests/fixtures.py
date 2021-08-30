@@ -1,12 +1,7 @@
-import sys
-import time
-from time import sleep
-
 import pytest
 from django.contrib.auth.models import User
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
 
 # @pytest.fixture
 # def admin_user(db):
@@ -14,15 +9,14 @@ from selenium.webdriver.common.keys import Keys
 #     return User.objects.create_superuser("admin", "password")
 
 
-# Fixture for Chrome
-@pytest.fixture(scope="class")
-def chrome_driver_init(request):
+@pytest.fixture(scope="module")
+def browser(request):
+    """Provide a selenium webdriver instance."""
     options = Options()
-    options.headless = True
-    driver = webdriver.Chrome(chrome_options=options)
-    request.cls.driver = driver
-    yield
-    driver.close()
+    options.headless = False
+    browser = webdriver.Chrome(chrome_options=options)
+    yield browser
+    browser.close()
 
 
 @pytest.fixture
