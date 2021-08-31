@@ -5,7 +5,11 @@ Django E-commerce Project's documentation
    :maxdepth: 2
    :caption: Contents:
 
-   guide/install
+.. toctree::
+    :maxdepth: 2
+    :caption: User Guide
+
+    guide/install
 
 
 
