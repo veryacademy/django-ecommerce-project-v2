@@ -3,7 +3,7 @@ Django E-commerce Project's documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: New:
 
 .. toctree::
     :maxdepth: 2
@@ -11,11 +11,3 @@ Django E-commerce Project's documentation
 
     guide/install
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
