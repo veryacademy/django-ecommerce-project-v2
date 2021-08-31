@@ -10,6 +10,8 @@ Welcome to Django E-commerce Project's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   guide/install
+
 
 
 Indices and tables
