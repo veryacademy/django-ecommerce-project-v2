@@ -1,0 +1,22 @@
+============
+Project Features
+============
+
+Website Features
+*	Website keyword search form with robust search and filter functionality
+*	Online store capabilities selling branded merchandise (this should accept payment via PayPal or credit card); products will vary in type
+ranging from clothing to hardware
+*	Newsletter subscription form and mailer
+*	Resource centre with robust search and filter functionality; resources may
+be in HTML, PDF, video or podcast format
+*	News platform with search and filter functionality
+*	Vacancy platform with online job application form
+*	Contact form, routing enquiries to specific mailboxes at the organization
+based on the subject matter selected
+*	Live chat helpdesk
+Administration Interface Features
+*	Create, edit, and delete products and meta data
+*	Create, edit, and delete custom admin roles
+*	Order management and reporting
+*	Customer management 
+*	Product Sales reporting

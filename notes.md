@@ -65,3 +65,6 @@ make_password('password')
 # Load fixture
 manage.py loaddata en_fixture
 ```
+
+
+https://django-ecommerce-project-v2.readthedocs.io/en/latest/
