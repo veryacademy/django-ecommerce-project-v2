@@ -42,6 +42,8 @@ class Product(models.Model):
     Product table
     """
 
+    web_id = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=255)
     name = models.CharField(
         verbose_name=_("name"),
         help_text=_("Required"),
@@ -53,9 +55,40 @@ class Product(models.Model):
         blank=True,
     )
     category = TreeManyToManyField(Category)
+    is_active = models.BooleanField(
+        verbose_name=_("Product visibility"),
+        help_text=_("Change product visibility"),
+        default=True,
+    )
+    created_at = models.DateTimeField(
+        _("Created at"), auto_now_add=True, editable=False
+    )
+    updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
 
     def __str__(self):
         return self.name
+
+
+class ProductType(models.Model):
+    name = models.CharField(
+        verbose_name=_("name"),
+        help_text=_("Required"),
+        max_length=255,
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class Brand(models.Model):
+    name = models.CharField(
+        verbose_name=_("name"),
+        help_text=_("Required"),
+        max_length=255,
+    )
+    created_at = models.DateTimeField(
+        _("Created at"), auto_now_add=True, editable=False
+    )
 
 
 class ProductInventory(models.Model):
@@ -64,12 +97,83 @@ class ProductInventory(models.Model):
     """
 
     sku = models.CharField(max_length=255, unique=True)
+    upc = models.CharField(max_length=12, unique=True)
+    product_type = models.ForeignKey(
+        ProductType, related_name="product_type", on_delete=models.CASCADE
+    )
     product = models.ForeignKey(
-        Product, related_name="inventory", on_delete=models.CASCADE
+        Product, related_name="product", on_delete=models.CASCADE
+    )
+    is_active = models.BooleanField(
+        verbose_name=_("Product visibility"),
+        help_text=_("Change product visibility"),
+        default=True,
+    )
+    retail_price = models.DecimalField(
+        verbose_name=_("Recommended retail price"),
+        help_text=_("Maximum 999.99"),
+        error_messages={
+            "name": {
+                "max_length": _("The price must be between 0 and 999.99."),
+            },
+        },
+        max_digits=5,
+        decimal_places=2,
+    )
+    store_price = models.DecimalField(
+        verbose_name=_("Regular price"),
+        help_text=_("Maximum 999.99"),
+        error_messages={
+            "name": {
+                "max_length": _("The price must be between 0 and 999.99."),
+            },
+        },
+        max_digits=5,
+        decimal_places=2,
+    )
+    sale_price = models.DecimalField(
+        verbose_name=_("Discount price"),
+        help_text=_("Maximum 999.99"),
+        error_messages={
+            "name": {
+                "max_length": _("The price must be between 0 and 999.99."),
+            },
+        },
+        max_digits=5,
+        decimal_places=2,
+    )
+    in_stock = models.BooleanField(
+        verbose_name=_("Stock Availability"),
+        help_text=_("Stock Availability"),
+        default=True,
+    )
+    weight = models.FloatField(_("weight"))
+    brand = models.ForeignKey(
+        Brand, related_name="brand", on_delete=models.CASCADE
+    )
+    created_at = models.DateTimeField(
+        _("Created at"), auto_now_add=True, editable=False
+    )
+    updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
+    is_active = models.BooleanField(
+        verbose_name=_("Product visibility"),
+        help_text=_("Change product visibility"),
+        default=True,
     )
 
     def __str__(self):
         return self.product.name
+
+
+class Stock(models.Model):
+    product_inventory = models.ForeignKey(
+        ProductInventory,
+        related_name="product_inventory",
+        on_delete=models.CASCADE,
+    )
+    last_checked = models.DateTimeField(_("Stock Check Date"))
+    units = models.IntegerField()
+    units_sold = models.IntegerField()
 
 
 class ProductAttribute(models.Model):
@@ -108,26 +212,15 @@ class ProductAttributeValues(models.Model):
         unique_together = (("attributevalues", "productinventory"),)
 
 
-class ProductType(models.Model):
-    name = models.CharField(
-        verbose_name=_("name"),
-        help_text=_("Required"),
-        max_length=255,
-    )
-
-    def __str__(self):
-        return self.name
-
-
 class ProductTypeAttributeValues(models.Model):
-    producttype = models.ForeignKey(
+    product_type = models.ForeignKey(
         ProductType,
-        related_name="producttype",
+        related_name="product_type_product_type",
         on_delete=models.CASCADE,
     )
-    attributevalues = models.ForeignKey(
+    attribute_value = models.ForeignKey(
         "ProductAttributeValue",
-        related_name="attributevaluesss",
+        related_name="product_type_attribute_value",
         on_delete=models.CASCADE,
     )
 
@@ -137,20 +230,19 @@ class ProductAttributeValue(models.Model):
     table
     """
 
-    productinventory = models.ManyToManyField(
+    product_inventory = models.ManyToManyField(
         ProductInventory,
-        related_name="productattributevalues",
+        related_name="product_attribute_values",
         through=ProductAttributeValues,
         through_fields=("attributevalues", "productinventory"),
     )
-    producttype = models.ManyToManyField(
+    product_type = models.ManyToManyField(
         ProductType,
-        related_name="producttypeattributevalues",
+        related_name="product_type_attribute_values",
         through=ProductTypeAttributeValues,
-        through_fields=("attributevalues", "producttype"),
+        through_fields=("attribute_value", "product_type"),
     )
-
-    attributevalue = models.CharField(
+    attribute_value = models.CharField(
         verbose_name=_("value"),
         help_text=_("Required"),
         max_length=255,
@@ -161,9 +253,9 @@ class ProductAttributeValue(models.Model):
         help_text=_("Product Description"),
         blank=True,
     )
-    attribute = models.ForeignKey(
+    product_attribute = models.ForeignKey(
         ProductAttribute,
-        related_name="attribute",
+        related_name="product_attribute",
         on_delete=models.CASCADE,
     )
 
@@ -171,13 +263,15 @@ class ProductAttributeValue(models.Model):
         return f"{self.attribute.name} - {self.attributevalue}"
 
 
-class ProductMedia(models.Model):
+class Media(models.Model):
     """
-    The Product Image table.
+    The product image table.
     """
 
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="product_image"
+    product_inventory = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="media_product_inventory",
     )
     image = models.ImageField(
         verbose_name=_("image"),
@@ -186,8 +280,8 @@ class ProductMedia(models.Model):
         default="images/default.png",
     )
     alt_text = models.CharField(
-        verbose_name=_("Alturnative text"),
-        help_text=_("Please add alturnative text"),
+        verbose_name=_("Alternative text"),
+        help_text=_("Please add alternative text"),
         max_length=255,
         null=True,
         blank=True,

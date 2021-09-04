@@ -66,5 +66,11 @@ make_password('password')
 manage.py loaddata en_fixture
 ```
 
+\docs>make html
 
 https://django-ecommerce-project-v2.readthedocs.io/en/latest/
+
+
+Dataset
+---
+https://www.kaggle.com/datafiniti/womens-shoes-prices

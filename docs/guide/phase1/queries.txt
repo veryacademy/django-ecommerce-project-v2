@@ -1,0 +1,30 @@
+from django.core import serializers
+
+from ecommerce.inventory.models import (
+    Category,
+    Product,
+    ProductAttribute,
+    ProductAttributeValue,
+    ProductInventory,
+    ProductType,
+    ProductTypeAttributeValues,
+    Stock,
+)
+
+# All Products
+Product.objects.all()
+
+# Get individual Item
+Product.objects.get(name="Django Book 1")
+
+# Get all inventory items for an individual product
+qs = ProductInventory.objects.filter(product__web_id="1234")
+
+# Get current stock levels
+Stock.objects.get(product_inventory_id__sku = "sku1234")
+
+# Get all inventory items with stock
+
+qs = ProductInventory.objects.filter(product__web_id="1234").prefetch_related('product_inventory_id')
+
+qs_json = serializers.serialize('json', qs)
