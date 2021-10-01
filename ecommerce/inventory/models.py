@@ -18,16 +18,16 @@ class Category(MPTTModel):
     slug = models.SlugField(
         verbose_name=_("category safe URL"),
         max_length=255,
-        unique=True,
         help_text=_("automatically generated from name"),
+        unique=True,
     )
     parent = TreeForeignKey(
         "self",
         verbose_name=_("parent category"),
         help_text=_("select <b>parent</b> category"),
         on_delete=models.CASCADE,
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         related_name="children",
     )
     is_active = models.BooleanField(default=True)
@@ -53,6 +53,8 @@ class Product(models.Model):
         verbose_name=_("product website ID"),
         help_text=_("product web ID - must be unique"),
         unique=True,
+        # blank=True,
+        # null=True,
     )
     slug = models.SlugField(max_length=255)
     name = models.CharField(
@@ -63,7 +65,8 @@ class Product(models.Model):
     description = models.TextField(
         verbose_name=_("description"),
         help_text=_("product description"),
-        blank=True,
+        blank=False,
+        null=False,
     )
     category = TreeManyToManyField(Category)
     is_active = models.BooleanField(
