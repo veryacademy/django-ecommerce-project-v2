@@ -31,13 +31,19 @@ The course is Free, hosted on YouTube `Project YouTube Playlist <https://www.you
    guide/project_brief/features
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Prerequisites
    
-   guide/prerequisites
+   guide/prerequisites/Basic-model-data-types-and-fields-list
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :caption: Django Database
+   
+   guide/django-database/Re
+
+.. toctree::
+   :maxdepth: 1
    :caption: Phase 1: app:Inventory
    
    guide/install

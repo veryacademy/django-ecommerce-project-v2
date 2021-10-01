@@ -1,2 +1,2 @@
-def test_customer_str(test_new_user):
-    assert test_new_user.__str__() == "admin"
+def test_admin_str(create_admin_user):
+    assert create_admin_user.__str__() == "admin"

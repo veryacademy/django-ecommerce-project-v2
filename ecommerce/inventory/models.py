@@ -10,28 +10,33 @@ class Category(MPTTModel):
     """
 
     name = models.CharField(
-        verbose_name=_("Category Name"),
-        help_text=_("Required and unique"),
+        verbose_name=_("category name"),
+        help_text=_("required and unique"),
         max_length=255,
         unique=True,
     )
     slug = models.SlugField(
-        verbose_name=_("Category safe URL"), max_length=255, unique=True
+        verbose_name=_("category safe URL"),
+        max_length=255,
+        unique=True,
+        help_text=_("automatically generated from name"),
     )
     parent = TreeForeignKey(
         "self",
+        verbose_name=_("parent category"),
+        help_text=_("select <b>parent</b> category"),
         on_delete=models.CASCADE,
         null=True,
         blank=True,
         related_name="children",
     )
-    is_active = models.BooleanField(default=True)  # Example Seasonal Lines
+    is_active = models.BooleanField(default=True)
 
     class MPTTMeta:
         order_insertion_by = ["name"]
 
     class Meta:
-        verbose_name = _("Category")
+        verbose_name = _("Product Category")
         verbose_name_plural = _("Categories")
 
     def __str__(self):
@@ -43,16 +48,21 @@ class Product(models.Model):
     Product table
     """
 
-    web_id = models.CharField(max_length=50)
+    web_id = models.CharField(
+        max_length=50,
+        verbose_name=_("product website ID"),
+        help_text=_("product web ID - must be unique"),
+        unique=True,
+    )
     slug = models.SlugField(max_length=255)
     name = models.CharField(
-        verbose_name=_("name"),
-        help_text=_("Required"),
+        verbose_name=_("product name"),
+        help_text=_("required"),
         max_length=255,
     )
     description = models.TextField(
         verbose_name=_("description"),
-        help_text=_("Product Description"),
+        help_text=_("product description"),
         blank=True,
     )
     category = TreeManyToManyField(Category)

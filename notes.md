@@ -1,18 +1,14 @@
 # E-commerce V2
 
+# Pytest
 
-
+pytest -m "not selenium" -rP
 
 
 # Topics Covered
 
 - Creating custom fields 
 cas = models.CharField(max_length=11, validators=[RegexValidator(r'^\d\d-\d\d-\d\d-\d\d$')])
-
-
-
-
-
 
 
 Make Password Fixture

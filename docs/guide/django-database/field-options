@@ -1,0 +1,5 @@
+https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-options
+
+null
+Field.null
+If True, Django will store empty values as NULL in the database. Default is False.

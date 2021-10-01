@@ -31,7 +31,7 @@ The course is Free, hosted on YouTube `Project YouTube Playlist <https://www.you
    guide/project_brief/features
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Prerequisites
    
    guide/prerequisites
