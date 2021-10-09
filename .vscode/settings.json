@@ -6,7 +6,7 @@
   ],
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": [
-      "--line-length=75"
+      "--line-length=79"
   ],
   "[python]": {
       "editor.codeActionsOnSave": {
