@@ -9,7 +9,7 @@ from ecommerce.inventory import models
     [
         (1, "fashion", "fashion", 1),
         (18, "trainers", "trainers", 1),
-        (36, "baseball", "baseball", 1),
+        (35, "baseball", "baseball", 1),
     ],
 )
 def test_inventory_db_category_dbfixture(
@@ -85,7 +85,7 @@ def test_inventory_db_product_dataset(
 ):
     result = models.Product.objects.get(id=id)
     result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
-    result_updated_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S")
     assert result.web_id == web_id
     assert result.name == name
     assert result.slug == slug
@@ -95,102 +95,216 @@ def test_inventory_db_product_dataset(
     assert result_updated_at == updated_at
 
 
-# def test_inventory_db_product_insert_data(db, product_factory):
-
-#     test = product_factory.create(category=(1,))
-
-#     item = Product.objects.all().count()
-#     item2 = Category.objects.all().count()
-#     item3 = Product.objects.get(id=1)
-#     item4 = test.category.all()
-#     item5 = test.web_id
-
-#     # print(item)
-#     # print(item2)
-#     # print(item4)
-#     # print(item5)
+def test_inventory_db_product_uniqueness_integrity(db, product_factory):
+    new_web_id = product_factory.create(web_id=123456789)
+    with pytest.raises(IntegrityError):
+        product_factory.create(web_id=123456789)
 
 
-# def test_inventory_db_product_uniqueness_integrity(db, product_factory):
-#     web_id = product_factory.create(web_id=123456789)
-#     with pytest.raises(IntegrityError):
-#         product_factory.create(web_id=123456789)
+@pytest.mark.dbfixture
+def test_inventory_db_product_insert_data(
+    db, product_factory, category_factory
+):
+
+    new_category = category_factory.create()
+    new_product = product_factory.create(category=(1, 36))
+    result_product_category = new_product.category.all().count()
+    assert "prod_web_id_" in new_product.web_id
+    assert result_product_category == 2
 
 
-# def test_inventory_db_producttype_insert_data(db, product_type_factory):
+def test_inventory_db_producttype_insert_data(db, product_type_factory):
 
-#     type = product_type_factory.create()
-#     gettype = ProductType.objects.get(id=1)
-
-#     # print(type.name)
-#     # print(gettype.name)
+    new_type = product_type_factory.create(name="demo_type")
+    assert new_type.name == "demo_type"
 
 
-# def test_inventory_db_producttype_uniqueness_integrity(
-#     db, product_type_factory
-# ):
-#     name = product_type_factory.create(name="not_unique")
-#     with pytest.raises(IntegrityError):
-#         product_type_factory.create(name="not_unique")
+def test_inventory_db_producttype_uniqueness_integrity(
+    db, product_type_factory
+):
+    product_type_factory.create(name="not_unique")
+    with pytest.raises(IntegrityError):
+        product_type_factory.create(name="not_unique")
 
 
-# def test_inventory_db_brand_insert_data(db, brand_factory):
+def test_inventory_db_brand_insert_data(db, brand_factory):
 
-#     type = brand_factory.create()
-#     gettype = ProductType.objects.get(id=1)
-
-#     # print(type.name)
-#     # print(gettype.name)
+    new_brand = brand_factory.create(name="demo_brand")
+    assert new_brand.name == "demo_brand"
 
 
-# def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
-#     name = brand_factory.create(name="not_unique")
-#     with pytest.raises(IntegrityError):
-#         brand_factory.create(name="not_unique")
+def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
+    brand_factory.create(name="not_unique")
+    with pytest.raises(IntegrityError):
+        brand_factory.create(name="not_unique")
 
 
-# @pytest.mark.dbfixture
-# @pytest.mark.parametrize(
-#     "id, sku, store_price",
-#     [
-#         (1, "7633969397", 92.00),
-#         (4434, "3012815584", 72.00),
-#         (8592, "9789065946", 72.00),
-#     ],
-# )
-# def test_inventory_db_product_inventory_dataset(
-#     db, django_db_setup, id, sku, store_price
-# ):
-#     item = ProductInventory.objects.get(id=id)
-#     assert item.sku == sku
-#     assert item.store_price == store_price
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "id, name, description",
+    [
+        (1, "men-shoe-size", "men shoe size"),
+    ],
+)
+def test_inventory_db_product_attribute_dataset(
+    db, django_db_setup, id, name, description
+):
+    result = models.ProductAttribute.objects.get(id=id)
+    assert result.name == name
+    assert result.description == description
 
 
-# def test_inventory_db_product_inventory_insert_data(
-#     db, product_inventory_factory
-# ):
-#     product = product_inventory_factory.create(sku=123456789)
-#     assert product.sku == 123456789
+def test_inventory_db_product_attrubite_insert_data(
+    db, product_attribute_factory
+):
+    new_attribute = product_attribute_factory.create()
+    assert new_attribute.name == "attribute_name_0"
+    assert new_attribute.description == "description_0"
 
 
-# def test_inventory_db_product_inventory_uniqueness_integrity_sku(
-#     db, product_inventory_factory
-# ):
-#     sku = product_inventory_factory.create(sku=1)
-#     with pytest.raises(IntegrityError):
-#         product_inventory_factory.create(sku=1)
+def test_inventory_db_product_attrubite_uniqueness_integrity(
+    db, product_attribute_factory
+):
+    product_attribute_factory.create(name="not_unique")
+    with pytest.raises(IntegrityError):
+        product_attribute_factory.create(name="not_unique")
 
 
-# def test_inventory_db_product_inventory_uniqueness_integrity_upc(
-#     db,
-#     product_inventory_factory,
-# ):
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "id, product_attribute, attribute_value",
+    [
+        (1, 1, 10),
+    ],
+)
+def test_inventory_db_product_attribute_dataset(
+    db, django_db_setup, id, product_attribute, attribute_value
+):
+    result = models.ProductAttributeValue.objects.get(id=1)
+    assert result.product_attribute.id == 1
+    assert result.attribute_value == "10"
 
-#     with pytest.raises(IntegrityError) as excinfo:
-#         new = product_inventory_factory.create(upc=934093051374)
-#         connection.check_constraints()
 
-#     assert "UNIQUE constraint failed" in str(excinfo.value)
+def test_inventory_db_product_attribute_value_data(
+    db, product_attribute_value_factory
+):
+    new_attribute_value = product_attribute_value_factory.create(
+        attribute_value="new_value", product_attribute__name="new_value"
+    )
+    assert new_attribute_value.attribute_value == "new_value"
+    assert new_attribute_value.product_attribute.name == "new_value"
+
+
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "id, sku, upc, product_type, product, brand, is_active, retail_price, store_price, sale_price, weight, created_at, updated_at",
+    [
+        (
+            1,
+            "7633969397",
+            "934093051374",
+            1,
+            1,
+            1,
+            1,
+            97.00,
+            92.00,
+            46.00,
+            987,
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
+        ),
+        (
+            8616,
+            "3880741573",
+            "844935525855",
+            1,
+            8616,
+            1253,
+            1,
+            89.00,
+            84.00,
+            42.00,
+            929,
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
+        ),
+    ],
+)
+def test_inventory_db_product_inventory_dataset(
+    db,
+    django_db_setup,
+    id,
+    sku,
+    upc,
+    product_type,
+    product,
+    brand,
+    is_active,
+    retail_price,
+    store_price,
+    sale_price,
+    weight,
+    created_at,
+    updated_at,
+):
+    result = models.ProductInventory.objects.get(id=id)
+    result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+    assert result.sku == sku
+    assert result.upc == upc
+    assert result.product_type.id == product_type
+    assert result.product.id == product
+    assert result.brand.id == brand
+    assert result.is_active == is_active
+    assert result.retail_price == retail_price
+    assert result.store_price == store_price
+    assert result.sale_price == sale_price
+    assert result.weight == weight
+    assert result_created_at == created_at
+    assert result_updated_at == updated_at
+
+
+def test_inventory_db_product_inventory_insert_data(
+    db, product_inventory_factory
+):
+    new_product = product_inventory_factory.create(
+        sku="123456789",
+        upc="123456789",
+        product_type__name="new_name",
+        product__web_id="123456789",
+        brand__name="new_name",
+    )
+    assert new_product.sku == "123456789"
+    assert new_product.upc == "123456789"
+    assert new_product.product_type.name == "new_name"
+    assert new_product.product.web_id == "123456789"
+    assert new_product.brand.name == "new_name"
+    assert new_product.is_active == 1
+    assert new_product.retail_price == 97.00
+    assert new_product.store_price == 92.00
+    assert new_product.sale_price == 46.00
+    assert new_product.weight == 987
+
+
+@pytest.mark.dbfixture
+def test_inventory_db_product_inventory_uniqueness_integrity_sku(
+    db, product_inventory_factory
+):
+    with pytest.raises(IntegrityError):
+        product_inventory_factory.create(sku="7633969397")
+
+
+def test_inventory_db_product_inventory_uniqueness_integrity_upc(
+    db,
+    product_inventory_factory,
+):
+
+    with pytest.raises(IntegrityError) as excinfo:
+        product_inventory_factory.create(upc="934093051374")
+        connection.check_constraints()
+
+    assert "UNIQUE constraint failed" in str(excinfo.value)
 
 
 # @pytest.mark.dbfixture
@@ -231,42 +345,3 @@ def test_inventory_db_product_dataset(
 # def test_inventory_db_media_insert_data(db, media_factory):
 #     product = media_factory.create()
 #     assert product.image == "images/default.png"
-
-
-# @pytest.mark.dbfixture
-# @pytest.mark.parametrize(
-#     "id, name, description",
-#     [
-#         (1, "men-shoe-size", "men shoe size"),
-#     ],
-# )
-# def test_inventory_db_product_attribute_dataset(
-#     db, django_db_setup, id, name, description
-# ):
-#     attr = ProductAttribute.objects.get(id=id)
-#     assert attr.name == name
-#     assert attr.description == description
-
-
-# def test_inventory_db_product_attrubite_insert_data(
-#     db, product_attribute_factory
-# ):
-#     attr = product_attribute_factory.create()
-
-
-# def test_inventory_db_product_attrubite_value_data(
-#     db, product_attribute_value_factory
-# ):
-#     attr = product_attribute_value_factory.create()
-
-
-# def test_inventory_db_product_attribute_value_data(
-#     db, product_with_attribute_values_factory
-# ):
-
-#     attr = product_with_attribute_values_factory.create()
-#     attr_values = attr.attribute_values.all().count()
-#     assert attr_values == 2
-
-#     # t = attr.attribute_values.all()
-#     # print(t)

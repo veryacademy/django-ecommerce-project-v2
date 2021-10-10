@@ -20,11 +20,13 @@ class ProductFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Product
 
-    web_id = 129381723
-    slug = "shoe1"
-    name = "shoe1"
+    web_id = fake.lexify(text="prod_web_id_??????")
+    slug = fake.lexify(text="prod_slug_??????")
+    name = fake.lexify(text="prod_name_??????")
     description = fake.text()
     is_active = True
+    created_at = "2021-09-04 22:14:18.279092"
+    updated_at = "2021-09-04 22:14:18.279092"
 
     @factory.post_generation
     def category(self, create, extracted, **kwargs):
@@ -56,8 +58,8 @@ class ProductInventoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.ProductInventory
 
-    sku = 7633969398
-    upc = 934093051375
+    sku = fake.lexify(text="sku_??????????")
+    upc = fake.lexify(text="upc_??????????")
     product_type = factory.SubFactory(ProductTypeFactory)
     product = factory.SubFactory(ProductFactory)
     brand = factory.SubFactory(BrandFactory)
@@ -94,8 +96,8 @@ class ProductAttributeFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.ProductAttribute
 
-    name = factory.Sequence(lambda n: "attribute_name%d" % n)
-    description = fake.lexify(text="description of attribute??????")
+    name = factory.Sequence(lambda n: "attribute_name_%d" % n)
+    description = factory.Sequence(lambda n: "description_%d" % n)
 
 
 class ProductAttributeValueFactory(factory.django.DjangoModelFactory):
@@ -103,7 +105,7 @@ class ProductAttributeValueFactory(factory.django.DjangoModelFactory):
         model = models.ProductAttributeValue
 
     product_attribute = factory.SubFactory(ProductAttributeFactory)
-    attribute_value = fake.random_digit_not_null()
+    attribute_value = fake.lexify(text="attribute_value_??????")
 
 
 class ProductAttributeValuesFactory(factory.django.DjangoModelFactory):

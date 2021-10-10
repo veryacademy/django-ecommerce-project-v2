@@ -477,7 +477,7 @@
 },
 {
   "model": "inventory.category",
-  "pk": 36,
+  "pk": 35,
   "fields": {
     "name": "baseball",
     "slug": "baseball",

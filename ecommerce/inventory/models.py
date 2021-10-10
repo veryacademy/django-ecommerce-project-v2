@@ -97,7 +97,7 @@ class Product(models.Model):
         blank=False,
         default=True,
         verbose_name=_("product visibility"),
-        help_text=_("format: true = show product"),
+        help_text=_("format: true=product visible"),
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -117,7 +117,7 @@ class Product(models.Model):
 
 class ProductType(models.Model):
     """
-    Product Type
+    Product type table
     """
 
     name = models.CharField(
@@ -126,7 +126,7 @@ class ProductType(models.Model):
         null=False,
         blank=False,
         verbose_name=_("type of product"),
-        help_text=_("required"),
+        help_text=_("format: required, unique, max-255"),
     )
 
     def __str__(self):
@@ -134,35 +134,39 @@ class ProductType(models.Model):
 
 
 class Brand(models.Model):
+    """
+    Product brand table
+    """
+
     name = models.CharField(
+        max_length=255,
         unique=True,
         null=False,
         blank=False,
         verbose_name=_("brand name"),
-        help_text=_("Required"),
-        max_length=255,
+        help_text=_("format: required, unique, max-255"),
     )
 
 
 class ProductAttribute(models.Model):
     """
-    ProductAttribute table
+    Product attribute table
     """
 
     name = models.CharField(
+        max_length=255,
         unique=True,
         null=False,
         blank=False,
-        verbose_name=_("attribute name"),
-        help_text=_("required"),
-        max_length=255,
+        verbose_name=_("product attribute name"),
+        help_text=_("format: required, unique, max-255"),
     )
     description = models.TextField(
         unique=False,
         null=False,
         blank=False,
-        verbose_name=_("attribute description"),
-        help_text=_("required"),
+        verbose_name=_("product attribute description"),
+        help_text=_("format: required"),
     )
 
     def __str__(self):
@@ -171,21 +175,21 @@ class ProductAttribute(models.Model):
 
 class ProductAttributeValue(models.Model):
     """
-    Product attribute table
+    Product attribute value table
     """
 
     product_attribute = models.ForeignKey(
         ProductAttribute,
         related_name="product_attribute",
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
     )
     attribute_value = models.CharField(
+        max_length=255,
         unique=False,
         null=False,
         blank=False,
         verbose_name=_("attribute value"),
-        help_text=_("Required"),
-        max_length=255,
+        help_text=_("format: required, max-255"),
     )
 
     def __str__(self):
@@ -194,20 +198,24 @@ class ProductAttributeValue(models.Model):
 
 class ProductInventory(models.Model):
     """
-    Sub-Products
+    Product inventory table
     """
 
     sku = models.CharField(
-        max_length=255,
+        max_length=20,
         unique=True,
         null=False,
         blank=False,
+        verbose_name=_("stock keeping unit"),
+        help_text=_("format: required, unique, max-20"),
     )
     upc = models.CharField(
         max_length=12,
         unique=True,
         null=False,
         blank=False,
+        verbose_name=_("universal product code"),
+        help_text=_("format: required, unique, max-12"),
     )
     product_type = models.ForeignKey(
         ProductType, related_name="product_type", on_delete=models.PROTECT
@@ -224,62 +232,69 @@ class ProductInventory(models.Model):
         through="ProductAttributeValues",
     )
     is_active = models.BooleanField(
-        verbose_name=_("product visibility"),
-        help_text=_("change product visibility"),
         default=True,
+        verbose_name=_("product visibility"),
+        help_text=_("format: true=product visible"),
     )
     retail_price = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
         unique=False,
         null=False,
         blank=False,
-        max_digits=5,
-        decimal_places=2,
         verbose_name=_("recommended retail price"),
-        help_text=_("maximum price 999.99"),
+        help_text=_("format: maximum price 999.99"),
         error_messages={
             "name": {
-                "max_length": _("The price must be between 0 and 999.99."),
+                "max_length": _("the price must be between 0 and 999.99."),
             },
         },
     )
     store_price = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
         unique=False,
         null=False,
         blank=False,
-        verbose_name=_("regular price"),
-        help_text=_("maximum 999.99"),
+        verbose_name=_("regular store price"),
+        help_text=_("format: maximum price 999.99"),
         error_messages={
             "name": {
-                "max_length": _("The price must be between 0 and 999.99."),
+                "max_length": _("the price must be between 0 and 999.99."),
             },
         },
-        max_digits=5,
-        decimal_places=2,
     )
     sale_price = models.DecimalField(
-        unique=False,
-        null=False,
-        blank=False,
-        verbose_name=_("Discount price"),
-        help_text=_("Maximum 999.99"),
-        error_messages={
-            "name": {
-                "max_length": _("The price must be between 0 and 999.99."),
-            },
-        },
         max_digits=5,
         decimal_places=2,
-    )
-    weight = models.FloatField(
-        _("product weight"),
         unique=False,
         null=False,
         blank=False,
+        verbose_name=_("sale price"),
+        help_text=_("format: maximum price 999.99"),
+        error_messages={
+            "name": {
+                "max_length": _("the price must be between 0 and 999.99."),
+            },
+        },
+    )
+    weight = models.FloatField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("product weight"),
     )
     created_at = models.DateTimeField(
-        _("Created at"), auto_now_add=True, editable=False
+        auto_now_add=True,
+        editable=False,
+        verbose_name=_("date sub-product created"),
+        help_text=_("format: Y-m-d H:M:S"),
     )
-    updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_("date sub-product updated"),
+        help_text=_("format: Y-m-d H:M:S"),
+    )
 
     def __str__(self):
         return self.product.name
@@ -292,22 +307,27 @@ class Stock(models.Model):
         on_delete=models.PROTECT,
     )
     last_checked = models.DateTimeField(
-        _("last stock check date"),
         unique=False,
         null=True,
         blank=True,
+        verbose_name=_("inventory stock check date"),
+        help_text=_("format: Y-m-d H:M:S, null-true, blank-true"),
     )
     units = models.IntegerField(
+        default=0,
         unique=False,
         null=False,
         blank=False,
-        default=0,
+        verbose_name=_("units/qty of stock"),
+        help_text=_("format: required, default-0"),
     )
     units_sold = models.IntegerField(
+        default=0,
         unique=False,
         null=False,
         blank=False,
-        default=0,
+        verbose_name=_("units sold to date"),
+        help_text=_("format: required, default-0"),
     )
 
 
