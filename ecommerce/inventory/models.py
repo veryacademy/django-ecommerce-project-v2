@@ -6,7 +6,7 @@ from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 
 class Category(MPTTModel):
     """
-    Category Table implimented with MPTT.
+    Inventory Category table implimented with MPTT.
     """
 
     name = models.CharField(
@@ -15,7 +15,7 @@ class Category(MPTTModel):
         unique=False,
         blank=False,
         verbose_name=_("category name"),
-        help_text=_("required and unique"),
+        help_text=_("format: required, max-255"),
     )
     slug = models.SlugField(
         max_length=255,
@@ -23,7 +23,9 @@ class Category(MPTTModel):
         unique=False,
         blank=False,
         verbose_name=_("category safe URL"),
-        help_text=_("letters, numbers, underscores or hyphens"),
+        help_text=_(
+            "format: required, letters, numbers, underscores or hyphens"
+        ),
     )
     parent = TreeForeignKey(
         "self",
@@ -32,8 +34,8 @@ class Category(MPTTModel):
         null=True,
         blank=True,
         unique=False,
-        verbose_name=_("parent category"),
-        help_text=_("select <b>parent</b> category"),
+        verbose_name=_("parent of category"),
+        help_text=_("format: not required"),
     )
     is_active = models.BooleanField(
         default=True,
@@ -44,7 +46,7 @@ class Category(MPTTModel):
 
     class Meta:
         verbose_name = _("product category")
-        verbose_name_plural = _("categories")
+        verbose_name_plural = _("product categories")
 
     def __str__(self):
         return self.name
@@ -52,7 +54,7 @@ class Category(MPTTModel):
 
 class Product(models.Model):
     """
-    Product table
+    Product details table
     """
 
     web_id = models.CharField(
@@ -61,13 +63,17 @@ class Product(models.Model):
         null=False,
         blank=False,
         verbose_name=_("product website ID"),
-        help_text=_("must be unique"),
+        help_text=_("format: required, unique"),
     )
     slug = models.SlugField(
         max_length=255,
         unique=False,
         null=False,
         blank=False,
+        verbose_name=_("product safe URL"),
+        help_text=_(
+            "format: required, letters, numbers, underscores or hyphens"
+        ),
     )
     name = models.CharField(
         max_length=255,
@@ -75,25 +81,35 @@ class Product(models.Model):
         null=False,
         blank=False,
         verbose_name=_("product name"),
-        help_text=_("required"),
+        help_text=_("format: required, max-255"),
     )
     description = models.TextField(
         unique=False,
         null=False,
         blank=False,
         verbose_name=_("product description"),
-        help_text=_("product description"),
+        help_text=_("format: required"),
     )
     category = TreeManyToManyField(Category)
     is_active = models.BooleanField(
-        verbose_name=_("product visibility"),
-        help_text=_("default is true"),
+        unique=False,
+        null=False,
+        blank=False,
         default=True,
+        verbose_name=_("product visibility"),
+        help_text=_("format: true = show product"),
     )
     created_at = models.DateTimeField(
-        _("created at"), auto_now_add=True, editable=False
+        auto_now_add=True,
+        editable=False,
+        verbose_name=_("date product created"),
+        help_text=_("format: Y-m-d H:M:S"),
     )
-    updated_at = models.DateTimeField(_("updated at"), auto_now=True)
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_("date product last updated"),
+        help_text=_("format: Y-m-d H:M:S"),
+    )
 
     def __str__(self):
         return self.name
@@ -128,6 +144,54 @@ class Brand(models.Model):
     )
 
 
+class ProductAttribute(models.Model):
+    """
+    ProductAttribute table
+    """
+
+    name = models.CharField(
+        unique=True,
+        null=False,
+        blank=False,
+        verbose_name=_("attribute name"),
+        help_text=_("required"),
+        max_length=255,
+    )
+    description = models.TextField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("attribute description"),
+        help_text=_("required"),
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class ProductAttributeValue(models.Model):
+    """
+    Product attribute table
+    """
+
+    product_attribute = models.ForeignKey(
+        ProductAttribute,
+        related_name="product_attribute",
+        on_delete=models.CASCADE,
+    )
+    attribute_value = models.CharField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("attribute value"),
+        help_text=_("Required"),
+        max_length=255,
+    )
+
+    def __str__(self):
+        return f"{self.product_attribute.name} : {self.attribute_value}"
+
+
 class ProductInventory(models.Model):
     """
     Sub-Products
@@ -153,6 +217,11 @@ class ProductInventory(models.Model):
     )
     brand = models.ForeignKey(
         Brand, related_name="brand", on_delete=models.PROTECT
+    )
+    attribute_values = models.ManyToManyField(
+        ProductAttributeValue,
+        related_name="product_attribute_values",
+        through="ProductAttributeValues",
     )
     is_active = models.BooleanField(
         verbose_name=_("product visibility"),
@@ -214,3 +283,87 @@ class ProductInventory(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class Stock(models.Model):
+    product_inventory = models.OneToOneField(
+        ProductInventory,
+        related_name="product_inventory",
+        on_delete=models.PROTECT,
+    )
+    last_checked = models.DateTimeField(
+        _("last stock check date"),
+        unique=False,
+        null=True,
+        blank=True,
+    )
+    units = models.IntegerField(
+        unique=False,
+        null=False,
+        blank=False,
+        default=0,
+    )
+    units_sold = models.IntegerField(
+        unique=False,
+        null=False,
+        blank=False,
+        default=0,
+    )
+
+
+class Media(models.Model):
+    """
+    The product image table.
+    """
+
+    product_inventory = models.ForeignKey(
+        ProductInventory,
+        on_delete=models.PROTECT,
+        related_name="media_product_inventory",
+    )
+    image = models.ImageField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("product image"),
+        upload_to="images/",
+        default="images/default.png",
+    )
+    alt_text = models.CharField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("alternative text"),
+        help_text=_("please add alternative text"),
+        max_length=255,
+    )
+    is_feature = models.BooleanField(
+        default=False,
+        help_text=_("default image"),
+    )
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("product image")
+        verbose_name_plural = _("product images")
+
+
+class ProductAttributeValues(models.Model):
+    """
+    Product attribute values link table
+    """
+
+    attributevalues = models.ForeignKey(
+        "ProductAttributeValue",
+        related_name="attributevaluess",
+        on_delete=models.CASCADE,
+    )
+    productinventory = models.ForeignKey(
+        ProductInventory,
+        related_name="productattributevaluess",
+        on_delete=models.CASCADE,
+    )
+
+    class Meta:
+        unique_together = (("attributevalues", "productinventory"),)
