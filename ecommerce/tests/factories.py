@@ -12,7 +12,7 @@ class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Category
 
-    name = fake.lexify(text="cat_name_??????")
+    name = factory.Sequence(lambda n: "cat_slug_%d" % n)
     slug = fake.lexify(text="cat_slug_??????")
 
 
@@ -31,11 +31,9 @@ class ProductFactory(factory.django.DjangoModelFactory):
     @factory.post_generation
     def category(self, create, extracted, **kwargs):
         if not create or not extracted:
-            # Simple build, or nothing to add, do nothing.
             return
 
         if extracted:
-            # A list of categories were passed in, use them
             for cat in extracted:
                 self.category.add(cat)
 
@@ -70,15 +68,6 @@ class ProductInventoryFactory(factory.django.DjangoModelFactory):
     weight = 987
 
 
-class StockFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = models.Stock
-
-    product_inventory = factory.SubFactory(ProductInventoryFactory)
-    units = 2
-    units_sold = 100
-
-
 class MediaFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Media
@@ -87,6 +76,15 @@ class MediaFactory(factory.django.DjangoModelFactory):
     image = "images/default.png"
     alt_text = "a default image solid color"
     is_feature = True
+
+
+class StockFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.Stock
+
+    product_inventory = factory.SubFactory(ProductInventoryFactory)
+    units = 2
+    units_sold = 100
 
 
 class ProductAttributeFactory(factory.django.DjangoModelFactory):
@@ -129,9 +127,8 @@ register(ProductFactory)
 register(ProductTypeFactory)
 register(BrandFactory)
 register(ProductInventoryFactory)
-register(StockFactory)
 register(MediaFactory)
+register(StockFactory)
 register(ProductAttributeFactory)
 register(ProductAttributeValueFactory)
-register(ProductAttributeValuesFactory)
 register(ProductWithAttributeValuesFactory)
