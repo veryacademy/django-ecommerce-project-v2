@@ -348,21 +348,32 @@ class Media(models.Model):
         verbose_name=_("product image"),
         upload_to="images/",
         default="images/default.png",
+        help_text=_("format: required, default-default.png"),
     )
     alt_text = models.CharField(
+        max_length=255,
         unique=False,
         null=False,
         blank=False,
         verbose_name=_("alternative text"),
-        help_text=_("please add alternative text"),
-        max_length=255,
+        help_text=_("format: required, max-255"),
     )
     is_feature = models.BooleanField(
         default=False,
-        help_text=_("default image"),
+        verbose_name=_("product default image"),
+        help_text=_("format: default=false, true=default image"),
     )
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        editable=False,
+        verbose_name=_("product visibility"),
+        help_text=_("format: Y-m-d H:M:S"),
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_("date sub-product created"),
+        help_text=_("format: Y-m-d H:M:S"),
+    )
 
     class Meta:
         verbose_name = _("product image")
@@ -377,12 +388,12 @@ class ProductAttributeValues(models.Model):
     attributevalues = models.ForeignKey(
         "ProductAttributeValue",
         related_name="attributevaluess",
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
     )
     productinventory = models.ForeignKey(
         ProductInventory,
         related_name="productattributevaluess",
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
     )
 
     class Meta:

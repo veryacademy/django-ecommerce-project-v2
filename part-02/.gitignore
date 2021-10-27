@@ -1,0 +1,45 @@
+# Environments #
+################
+/venv
+.vscode
+
+# Django #
+##########
+*.log
+*.pot
+*.pyc
+__pycache__
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# Compiled source #
+###################
+*.exe
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Unit test / coverage reports #
+################################
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/

@@ -28,6 +28,7 @@ make_password('password')
 ## Load fixture
 ```
 manage.py loaddata xyz.json
+manage.py dumpdata auth.user --indent 2 > user.json 
 ```
 
 ## Docs

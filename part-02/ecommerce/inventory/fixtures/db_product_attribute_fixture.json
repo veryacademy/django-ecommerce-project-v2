@@ -1,0 +1,9 @@
+[{
+        "model": "inventory.productattribute",
+        "id": "1",
+        "fields": {
+            "name": "men-shoe-size",
+            "description": "men shoe size"
+        }
+    }
+]
