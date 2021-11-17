@@ -2,8 +2,16 @@
         "model": "inventory.productattribute",
         "id": "1",
         "fields": {
-            "name": "men-shoe-size",
+            "name": "woman-shoe-size",
             "description": "men shoe size"
+        }
+    },
+{
+        "model": "inventory.productattribute",
+        "id": "2",
+        "fields": {
+            "name": "color",
+            "description": "color"
         }
     }
 ]
