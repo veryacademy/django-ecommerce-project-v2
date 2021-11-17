@@ -1,0 +1,493 @@
+[
+  {
+    "model": "inventory.category",
+    "pk": 1,
+    "fields": {
+      "name": "fashion",
+      "slug": "fashion",
+      "parent": null,
+      "is_active": true,
+      "lft": 1,
+      "rght": 70,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 2,
+    "fields": {
+      "name": "woman",
+      "slug": "woman",
+      "parent": 1,
+      "is_active": true,
+      "lft": 2,
+      "rght": 69,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 3,
+    "fields": {
+      "name": "shoes",
+      "slug": "shoes",
+      "parent": 2,
+      "is_active": true,
+      "lft": 3,
+      "rght": 68,
+      "tree_id": 1,
+      "level": 2
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 4,
+    "fields": {
+      "name": "sport and fitness",
+      "slug": "sport-and-fitness",
+      "parent": 3,
+      "is_active": true,
+      "lft": 60,
+      "rght": 61,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 5,
+    "fields": {
+      "name": "general purpose",
+      "slug": "general-purpose",
+      "parent": 3,
+      "is_active": true,
+      "lft": 28,
+      "rght": 29,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 6,
+    "fields": {
+      "name": "flats",
+      "slug": "flats",
+      "parent": 3,
+      "is_active": true,
+      "lft": 24,
+      "rght": 25,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 7,
+    "fields": {
+      "name": "casual",
+      "slug": "casual",
+      "parent": 3,
+      "is_active": true,
+      "lft": 10,
+      "rght": 11,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 8,
+    "fields": {
+      "name": "boots",
+      "slug": "boots",
+      "parent": 3,
+      "is_active": true,
+      "lft": 8,
+      "rght": 9,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 9,
+    "fields": {
+      "name": "heels",
+      "slug": "heels",
+      "parent": 3,
+      "is_active": true,
+      "lft": 34,
+      "rght": 35,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 10,
+    "fields": {
+      "name": "wedges",
+      "slug": "wedges",
+      "parent": 3,
+      "is_active": true,
+      "lft": 64,
+      "rght": 65,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 11,
+    "fields": {
+      "name": "booties",
+      "slug": "booties",
+      "parent": 3,
+      "is_active": true,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 12,
+    "fields": {
+      "name": "loafers",
+      "slug": "loafers",
+      "parent": 3,
+      "is_active": true,
+      "lft": 40,
+      "rght": 41,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 13,
+    "fields": {
+      "name": "sandalls",
+      "slug": "sandalls",
+      "parent": 3,
+      "is_active": true,
+      "lft": 54,
+      "rght": 55,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 14,
+    "fields": {
+      "name": "slip-ons",
+      "slug": "slip-ons",
+      "parent": 3,
+      "is_active": true,
+      "lft": 56,
+      "rght": 57,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 15,
+    "fields": {
+      "name": "oxfords",
+      "slug": "oxfords",
+      "parent": 3,
+      "is_active": true,
+      "lft": 44,
+      "rght": 45,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 16,
+    "fields": {
+      "name": "slippers",
+      "slug": "slippers",
+      "parent": 3,
+      "is_active": true,
+      "lft": 58,
+      "rght": 59,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 17,
+    "fields": {
+      "name": "golf",
+      "slug": "golf",
+      "parent": 3,
+      "is_active": true,
+      "lft": 30,
+      "rght": 31,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 18,
+    "fields": {
+      "name": "trainers",
+      "slug": "trainers",
+      "parent": 3,
+      "is_active": true,
+      "lft": 62,
+      "rght": 63,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 19,
+    "fields": {
+      "name": "running",
+      "slug": "running",
+      "parent": 3,
+      "is_active": true,
+      "lft": 50,
+      "rght": 51,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 20,
+    "fields": {
+      "name": "pumps",
+      "slug": "pumps",
+      "parent": 3,
+      "is_active": true,
+      "lft": 48,
+      "rght": 49,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 21,
+    "fields": {
+      "name": "patio",
+      "slug": "patio",
+      "parent": 3,
+      "is_active": true,
+      "lft": 46,
+      "rght": 47,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 22,
+    "fields": {
+      "name": "designer",
+      "slug": "designer",
+      "parent": 3,
+      "is_active": true,
+      "lft": 20,
+      "rght": 21,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 23,
+    "fields": {
+      "name": "contemporary",
+      "slug": "contemporary",
+      "parent": 3,
+      "is_active": true,
+      "lft": 14,
+      "rght": 15,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 24,
+    "fields": {
+      "name": "comfort",
+      "slug": "comfort",
+      "parent": 3,
+      "is_active": true,
+      "lft": 12,
+      "rght": 13,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 25,
+    "fields": {
+      "name": "cross-training",
+      "slug": "cross-training",
+      "parent": 3,
+      "is_active": true,
+      "lft": 16,
+      "rght": 17,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 26,
+    "fields": {
+      "name": "formal",
+      "slug": "formal",
+      "parent": 3,
+      "is_active": true,
+      "lft": 26,
+      "rght": 27,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 27,
+    "fields": {
+      "name": "safety",
+      "slug": "safety",
+      "parent": 3,
+      "is_active": true,
+      "lft": 52,
+      "rght": 53,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 28,
+    "fields": {
+      "name": "hiking",
+      "slug": "hiking",
+      "parent": 3,
+      "is_active": true,
+      "lft": 36,
+      "rght": 37,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 29,
+    "fields": {
+      "name": "eco-friendly",
+      "slug": "eco-friendly",
+      "parent": 3,
+      "is_active": true,
+      "lft": 22,
+      "rght": 23,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 30,
+    "fields": {
+      "name": "cycling",
+      "slug": "cycling",
+      "parent": 3,
+      "is_active": true,
+      "lft": 18,
+      "rght": 19,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 31,
+    "fields": {
+      "name": "moccasins",
+      "slug": "moccasins",
+      "parent": 3,
+      "is_active": true,
+      "lft": 42,
+      "rght": 43,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 32,
+    "fields": {
+      "name": "kids",
+      "slug": "kids",
+      "parent": 3,
+      "is_active": true,
+      "lft": 38,
+      "rght": 39,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 33,
+    "fields": {
+      "name": "halloween",
+      "slug": "halloween",
+      "parent": 3,
+      "is_active": true,
+      "lft": 32,
+      "rght": 33,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 34,
+    "fields": {
+      "name": "winter",
+      "slug": "winter",
+      "parent": 3,
+      "is_active": true,
+      "lft": 66,
+      "rght": 67,
+      "tree_id": 1,
+      "level": 3
+    }
+  },
+  {
+    "model": "inventory.category",
+    "pk": 35,
+    "fields": {
+      "name": "baseball",
+      "slug": "baseball",
+      "parent": 3,
+      "is_active": true,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 3
+    }
+  }
+  ]
+  
