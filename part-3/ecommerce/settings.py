@@ -57,7 +57,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ecommerce.wsgi.application"
 
-
 # Database
 
 DATABASES = {
@@ -79,7 +78,6 @@ DATABASES = {
 # }
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +108,6 @@ USE_L10N = True
 
 # USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -120,7 +117,6 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 
 INTERNAL_IPS = [
     "127.0.0.1",
