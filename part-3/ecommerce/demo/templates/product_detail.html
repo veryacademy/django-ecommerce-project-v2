@@ -65,17 +65,18 @@
   {% endfor %}
 </ul>
 
+  <script>
 
-<script>
+  var d = {}
 
-  var textBoxes = document.querySelectorAll('[id^=target]');
-  const d = {}
+  let textBoxes = document.querySelectorAll('[id^=target]');
+
   let e = 0
   let f = textBoxes.length
 
-  for(var i in textBoxes){
-    if (e < f){
-      if (textBoxes[i].classList.contains("selected")){
+  for (let i in textBoxes) {
+    if (e < f) {
+      if (textBoxes[i].classList.contains("selected")) {
         d[textBoxes[i].getAttribute('data-attribute')] = textBoxes[i].getAttribute('value')
       }
     } else {
@@ -83,23 +84,31 @@
     }
     e++
   }
-  
-  $('[id^=target]').click(function(){
-    var value = this.getAttribute('value');
+
+  document.addEventListener('click', function(e) {
+  let value = e.target.getAttribute('value');
+  d[e.target.getAttribute('data-attribute')] = e.target.getAttribute('value')
+  let querystring = buildUrlWithParams(d)
+  let url = window.location.href.split('?')[0]
+  window.location.href = url + "?" + querystring;
+  }, false);
+
+  {% comment %} $('[id^=target]').click(function () {
+    const value = this.getAttribute('value');
     d[this.getAttribute('data-attribute')] = this.getAttribute('value')
     const querystring = buildUrlWithParams(d)
     const url = window.location.href.split('?')[0]
-    window.location.href = url +"?"+ querystring;
-  });
+    window.location.href = url + "?" + querystring;
+  }); {% endcomment %}
 
   function buildUrlWithParams(data) {
-    const searchparams = [];
-    for (let d in data)
+    var searchparams = [];
+    for (var d in data)
       searchparams.push(d + '=' + data[d]);
     return searchparams.join('&');
   }
 
-</script>
+  </script>
 
   </body>
 </html>

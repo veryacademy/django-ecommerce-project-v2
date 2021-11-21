@@ -302,9 +302,6 @@ class ProductInventory(models.Model):
         help_text=_("format: Y-m-d H:M:S"),
     )
 
-    def get_sku(self, slug):
-        return ProductInventory.objects.get(product__slug=slug)
-
     def __str__(self):
         return self.product.name
 
