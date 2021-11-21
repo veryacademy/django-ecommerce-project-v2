@@ -1,38 +1,27 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% block title %}Product By Category{% endblock %}
 
-    <title>Product By Category</title>
-  </head>
-  <body>
+{% block content %}
+  {% comment %} <ul>
+            {% for x in data %}
+              <li>
+              {{x.name}}
+              </li>
+          {% endfor %}
+  </ul> {% endcomment %}
 
-{% comment %} <ul>
-           {% for x in data %}
-            <li>
-            {{x.name}}
-            </li>
-        {% endfor %}
-</ul> {% endcomment %}
+  {% comment %} <pre>{{data}}</pre> {% endcomment %}
 
-{% comment %} <pre>{{data}}</pre> {% endcomment %}
-
-<ul>
-  {% for x in data %}
-    <li class="text-capitalize">
-    {{x.name}} [<a href="{% url 'demo:product_detail' slug=x.slug %}">view</a>]
-    </li>
-    <ul class="list-unstyled">
-    <li>{{x.id}}</li>
-    <li>Price: £{{x.product__store_price}}</li>
-    </ul>
-  {% endfor %}
-</ul>
-
-  </body>
-</html>
+  <ul>
+    {% for x in data %}
+      <li class="text-capitalize">
+      {{x.name}} [<a href="{% url 'demo:product_detail' slug=x.slug %}">view</a>]
+      </li>
+      <ul class="list-unstyled">
+      <li>{{x.id}}</li>
+      <li>Price: £{{x.product__store_price}}</li>
+      </ul>
+    {% endfor %}
+  </ul>
+{% endblock %}
