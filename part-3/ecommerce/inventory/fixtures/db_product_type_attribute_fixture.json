@@ -1,0 +1,17 @@
+[{
+        "model": "inventory.producttypeattribute",
+        "id": "1",
+        "fields": {
+            "product_attribute": "1",
+            "product_type": "1"
+        }
+    },
+    {
+        "model": "inventory.producttypeattribute",
+        "id": "2",
+        "fields": {
+            "product_attribute": "2",
+            "product_type": "1"
+        }
+    }
+]

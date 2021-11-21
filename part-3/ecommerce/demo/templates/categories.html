@@ -18,7 +18,7 @@
     {% cache 600 data %}
             {% for x in data %}
             <li>
-            {{x.name}}
+            <a href="{% url 'demo:product_by_category' category=x.slug %}">{{x.name}}</a>
             </li>
         {% endfor %}
     {% endcache %}
