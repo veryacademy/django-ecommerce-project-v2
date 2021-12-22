@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+  <h1>Categories</h1>
+  <ul>
+
+  {% load cache %}
+  {% cache 600 data %}
+          {% for x in data %}
+          <li>
+          <a href="{% url 'demo:product_by_category' category=x.slug %}">{{x.name}}</a>
+          </li>
+      {% endfor %}
+  {% endcache %}
+{% endblock %}
