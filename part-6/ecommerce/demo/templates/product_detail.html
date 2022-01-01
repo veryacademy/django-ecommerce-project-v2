@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Product Detail{% endblock %}
+
+{% block content %}
+
+{% comment %} 
+<ul>
+        {% for x in data %}
+            <li>
+            {% comment %} {{x.name}}
+            {{x.category__name}} {% endcomment %}
+            {% comment %} {{x.product__store_price}} {% endcomment %}
+            {% comment %} {{x.id}} {% endcomment %}
+            {% comment %} {{x.sku}} {% endcomment %}
+            {% comment %} {{x.product}}
+            {{x.product__name}}
+            {{x.store_price}}
+            {{x.is_default}}
+            {{x.attribute_values__attribute_value}} {% endcomment %}
+            {% comment %} </li> {% endcomment %}
+        {% comment %} {% endfor %} {% endcomment %}
+{% comment %} </ul>   
+
+{% endcomment %}
+
+<ul>
+    <li class="text-capitalize">
+    {{x.product__name}}
+    </li>
+    <ul class="list-unstyled">
+    <li>SKU: {{x.sku}}
+    <li>Price: £{{x.store_price}}</li>
+    <li>{{x.attribute_values__attribute_value}}</li>
+    <li>Stock: {{x.product_inventory__units}}</li>
+    </ul>
+</ul>
+
+<ul>
+  {% for y in z %}
+    <li class="text-capitalize">
+    {{y.product_attribute__name}}
+    <ul>
+      {% for a in filter %}
+        {% if a.attribute_values__product_attribute__name == y.product_attribute__name  %}
+        <li class="text-capitalize">
+            {% if a.attribute_values__attribute_value in x.field_a %}
+            <div id="target-{{a.attribute_values__attribute_value}}" class="selected fw-bold" data-attribute="{{y.product_attribute__name}}" value="{{a.attribute_values__attribute_value}}">{{a.attribute_values__attribute_value}}</div>
+            {% else %}
+            <div id="target-{{a.attribute_values__attribute_value}}" class="" data-attribute="{{y.product_attribute__name}}" value="{{a.attribute_values__attribute_value}}">{{a.attribute_values__attribute_value}}</div>
+            {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    </li>
+  {% endfor %}
+</ul>
+
+<script>
+
+  var d = {}
+
+  let textBoxes = document.querySelectorAll('[id^=target]');
+
+  let e = 0
+  let f = textBoxes.length
+
+  for (let i in textBoxes) {
+    if (e < f) {
+      if (textBoxes[i].classList.contains("selected")) {
+          d[textBoxes[i].getAttribute('data-attribute')] = textBoxes[i].getAttribute('value')
+      }
+    } else {
+      break
+    }
+    e++
+  }
+
+  document.addEventListener('click', function(e) {
+  let value = e.target.getAttribute('value');
+  d[e.target.getAttribute('data-attribute')] = e.target.getAttribute('value')
+  let querystring = buildUrlWithParams(d)
+  let url = window.location.href.split('?')[0]
+  window.location.href = url + "?" + querystring;
+  }, false);
+
+  {% comment %} $('[id^=target]').click(function () {
+    const value = this.getAttribute('value');
+    d[this.getAttribute('data-attribute')] = this.getAttribute('value')
+    const querystring = buildUrlWithParams(d)
+    const url = window.location.href.split('?')[0]
+    window.location.href = url + "?" + querystring;
+  }); {% endcomment %}
+
+  function buildUrlWithParams(data) {
+    var searchparams = [];
+    for (var d in data)
+      searchparams.push(d + '=' + data[d]);
+    return searchparams.join('&');
+  }
+
+</script>
+
+{% endblock %}

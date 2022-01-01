@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Product By Category{% endblock %}
+
+{% block content %}
+  {% comment %} <ul>
+            {% for x in data %}
+              <li>
+              {{x.name}}
+              </li>
+          {% endfor %}
+  </ul> {% endcomment %}
+
+  {% comment %} <pre>{{data}}</pre> {% endcomment %}
+
+  <ul>
+    {% for x in data %}
+      <li class="text-capitalize">
+      {{x.name}} [<a href="{% url 'demo:product_detail' slug=x.slug %}">view</a>]
+      </li>
+      <ul class="list-unstyled">
+      <li>{{x.id}}</li>
+      <li>Price: £{{x.product__store_price}}</li>
+      </ul>
+    {% endfor %}
+  </ul>
+{% endblock %}
