@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   pgdb:
-    profiles: [ "dev" ]
+    # profiles: [ "dev" ]
     container_name: pgdb_ecommerce
     image: postgres
     restart: always
