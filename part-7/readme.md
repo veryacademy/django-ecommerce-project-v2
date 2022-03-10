@@ -1,4 +1,4 @@
-# Setup-django-ecommerce-part-7
+# setup-for-django-ecommerce-part-7
 A little help you get you started
 
 1. Download code and open in your preferred code editor
