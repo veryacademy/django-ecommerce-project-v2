@@ -1,8 +1,6 @@
 # Setup-django-ecommerce-part-7
 A little help you get you started
 
-## Windows
-
 1. Download code and open in your preferred code editor
 2. Create a Virtual Environment. If you are using Visual Studio Code, open the terminal and type:
 
