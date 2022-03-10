@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
     def handle(self):
-        call_command("docker-compose --profile dev up -d")
+        call_command("docker-compose up -d")
 
         # https://docs.docker.com/compose/profiles/
         # docker-compose --profile frontend --profile debug up
