@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  pgdb:
+    # profiles: [ "dev" ]
+    container_name: pgdb_ecommerce
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  elasticsearch:
+    container_name: search
+    image: elasticsearch:7.14.2
+    environment:
+      - cluster.name=ecommerce-elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
+    ports:
+      - "9200:9200"
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    depends_on:
+      - pgdb
