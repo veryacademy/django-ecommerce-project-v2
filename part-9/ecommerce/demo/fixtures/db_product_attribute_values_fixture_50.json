@@ -1,0 +1,394 @@
+[
+    {
+        "model": "inventory.productattributevalues",
+        "id": "1",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "1"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "2",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "2"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "3",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "3"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "4",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "4"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "5",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "5"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "6",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "6"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "7",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "7"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "8",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "8"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "9",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "9"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "10",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "10"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "11",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "11"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "12",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "12"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "13",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "13"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "14",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "14"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "15",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "15"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "16",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "16"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "17",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "17"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "18",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "18"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "19",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "19"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "20",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "20"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "21",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "21"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "22",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "22"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "23",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "23"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "24",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "24"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "25",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "25"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "26",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "26"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "27",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "27"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "28",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "28"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "29",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "29"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "30",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "30"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "31",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "31"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "32",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "32"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "33",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "33"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "34",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "34"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "35",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "35"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "36",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "36"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "37",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "37"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "38",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "38"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "39",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "39"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "40",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "40"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "41",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "41"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "42",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "42"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "43",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "43"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "44",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "44"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "45",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "45"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "46",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "46"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "47",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "47"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "48",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "48"
+        }
+    },
+    {
+        "model": "inventory.productattributevalues",
+        "id": "49",
+        "fields": {
+            "attributevalues": "1",
+            "productinventory": "49"
+        }
+    }
+]

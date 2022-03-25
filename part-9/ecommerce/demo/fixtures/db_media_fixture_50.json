@@ -1,0 +1,590 @@
+[
+    {
+        "model": "inventory.media",
+        "id": "1",
+        "fields": {
+            "product_inventory": "1",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "2",
+        "fields": {
+            "product_inventory": "2",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "3",
+        "fields": {
+            "product_inventory": "3",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "4",
+        "fields": {
+            "product_inventory": "4",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "5",
+        "fields": {
+            "product_inventory": "5",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "6",
+        "fields": {
+            "product_inventory": "6",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "7",
+        "fields": {
+            "product_inventory": "7",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "8",
+        "fields": {
+            "product_inventory": "8",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "9",
+        "fields": {
+            "product_inventory": "9",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "10",
+        "fields": {
+            "product_inventory": "10",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "11",
+        "fields": {
+            "product_inventory": "11",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "12",
+        "fields": {
+            "product_inventory": "12",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "13",
+        "fields": {
+            "product_inventory": "13",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "14",
+        "fields": {
+            "product_inventory": "14",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "15",
+        "fields": {
+            "product_inventory": "15",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "16",
+        "fields": {
+            "product_inventory": "16",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "17",
+        "fields": {
+            "product_inventory": "17",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "18",
+        "fields": {
+            "product_inventory": "18",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "19",
+        "fields": {
+            "product_inventory": "19",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "20",
+        "fields": {
+            "product_inventory": "20",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "21",
+        "fields": {
+            "product_inventory": "21",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "22",
+        "fields": {
+            "product_inventory": "22",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "23",
+        "fields": {
+            "product_inventory": "23",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "24",
+        "fields": {
+            "product_inventory": "24",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "25",
+        "fields": {
+            "product_inventory": "25",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "26",
+        "fields": {
+            "product_inventory": "26",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "27",
+        "fields": {
+            "product_inventory": "27",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "28",
+        "fields": {
+            "product_inventory": "28",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "29",
+        "fields": {
+            "product_inventory": "29",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "30",
+        "fields": {
+            "product_inventory": "30",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "31",
+        "fields": {
+            "product_inventory": "31",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "32",
+        "fields": {
+            "product_inventory": "32",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "33",
+        "fields": {
+            "product_inventory": "33",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "34",
+        "fields": {
+            "product_inventory": "34",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "35",
+        "fields": {
+            "product_inventory": "35",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "36",
+        "fields": {
+            "product_inventory": "36",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "37",
+        "fields": {
+            "product_inventory": "37",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "38",
+        "fields": {
+            "product_inventory": "38",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "39",
+        "fields": {
+            "product_inventory": "39",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "40",
+        "fields": {
+            "product_inventory": "40",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "41",
+        "fields": {
+            "product_inventory": "41",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "42",
+        "fields": {
+            "product_inventory": "42",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "43",
+        "fields": {
+            "product_inventory": "43",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "44",
+        "fields": {
+            "product_inventory": "44",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "45",
+        "fields": {
+            "product_inventory": "45",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "46",
+        "fields": {
+            "product_inventory": "46",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "47",
+        "fields": {
+            "product_inventory": "47",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "48",
+        "fields": {
+            "product_inventory": "48",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    },
+    {
+        "model": "inventory.media",
+        "id": "49",
+        "fields": {
+            "product_inventory": "49",
+            "img_url": "images/default.png",
+            "alt_text": "a default image solid color",
+            "is_feature": true,
+            "created_at": "2021-09-01T13:20:30+03:00",
+            "updated_at": "2021-09-01T13:20:30+03:00"
+        }
+    }
+]

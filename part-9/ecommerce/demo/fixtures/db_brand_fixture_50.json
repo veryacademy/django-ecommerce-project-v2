@@ -1,0 +1,142 @@
+[
+    {
+        "model": "inventory.brand",
+        "id": "1",
+        "fields": {
+            "name": "361"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "2",
+        "fields": {
+            "name": "143 girl"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "3",
+        "fields": {
+            "name": "143 gir"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "4",
+        "fields": {
+            "name": "2 lips too"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "5",
+        "fields": {
+            "name": "79 scii"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "6",
+        "fields": {
+            "name": "9 degree by refex"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "7",
+        "fields": {
+            "name": "a.n.a"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "8",
+        "fields": {
+            "name": "a.x.n.y."
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "9",
+        "fields": {
+            "name": "a2 by aerosoes"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "10",
+        "fields": {
+            "name": "abound"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "11",
+        "fields": {
+            "name": "acacia"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "12",
+        "fields": {
+            "name": "academie gear"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "13",
+        "fields": {
+            "name": "acorn"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "14",
+        "fields": {
+            "name": "adam tucker"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "15",
+        "fields": {
+            "name": "adi"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "16",
+        "fields": {
+            "name": "adidas"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "17",
+        "fields": {
+            "name": "adidas outdoor"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "18",
+        "fields": {
+            "name": "adieu"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "19",
+        "fields": {
+            "name": "adriana"
+        }
+    },
+    {
+        "model": "inventory.brand",
+        "id": "20",
+        "fields": {
+            "name": "adriana york"
+        }
+    }
+]
