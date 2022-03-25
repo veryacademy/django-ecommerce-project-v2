@@ -1,0 +1,492 @@
+[
+    {
+        "model": "inventory.stock",
+        "id": "1",
+        "fields": {
+            "product_inventory": "1",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "135",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "2",
+        "fields": {
+            "product_inventory": "2",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "188",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "3",
+        "fields": {
+            "product_inventory": "3",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "2",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "4",
+        "fields": {
+            "product_inventory": "4",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "153",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "5",
+        "fields": {
+            "product_inventory": "5",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "84",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "6",
+        "fields": {
+            "product_inventory": "6",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "92",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "7",
+        "fields": {
+            "product_inventory": "7",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "153",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "8",
+        "fields": {
+            "product_inventory": "8",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "153",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "9",
+        "fields": {
+            "product_inventory": "9",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "113",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "10",
+        "fields": {
+            "product_inventory": "10",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "77",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "11",
+        "fields": {
+            "product_inventory": "11",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "181",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "12",
+        "fields": {
+            "product_inventory": "12",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "178",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "13",
+        "fields": {
+            "product_inventory": "13",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "43",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "14",
+        "fields": {
+            "product_inventory": "14",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "18",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "15",
+        "fields": {
+            "product_inventory": "15",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "53",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "16",
+        "fields": {
+            "product_inventory": "16",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "83",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "17",
+        "fields": {
+            "product_inventory": "17",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "102",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "18",
+        "fields": {
+            "product_inventory": "18",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "133",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "19",
+        "fields": {
+            "product_inventory": "19",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "20",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "20",
+        "fields": {
+            "product_inventory": "20",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "172",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "21",
+        "fields": {
+            "product_inventory": "21",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "116",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "22",
+        "fields": {
+            "product_inventory": "22",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "3",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "23",
+        "fields": {
+            "product_inventory": "23",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "5",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "24",
+        "fields": {
+            "product_inventory": "24",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "5",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "25",
+        "fields": {
+            "product_inventory": "25",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "140",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "26",
+        "fields": {
+            "product_inventory": "26",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "63",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "27",
+        "fields": {
+            "product_inventory": "27",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "51",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "28",
+        "fields": {
+            "product_inventory": "28",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "46",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "29",
+        "fields": {
+            "product_inventory": "29",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "158",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "30",
+        "fields": {
+            "product_inventory": "30",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "95",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "31",
+        "fields": {
+            "product_inventory": "31",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "134",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "32",
+        "fields": {
+            "product_inventory": "32",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "110",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "33",
+        "fields": {
+            "product_inventory": "33",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "21",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "34",
+        "fields": {
+            "product_inventory": "34",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "164",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "35",
+        "fields": {
+            "product_inventory": "35",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "1",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "36",
+        "fields": {
+            "product_inventory": "36",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "37",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "37",
+        "fields": {
+            "product_inventory": "37",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "137",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "38",
+        "fields": {
+            "product_inventory": "38",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "88",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "39",
+        "fields": {
+            "product_inventory": "39",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "145",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "40",
+        "fields": {
+            "product_inventory": "40",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "181",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "41",
+        "fields": {
+            "product_inventory": "41",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "113",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "42",
+        "fields": {
+            "product_inventory": "42",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "102",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "43",
+        "fields": {
+            "product_inventory": "43",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "161",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "44",
+        "fields": {
+            "product_inventory": "44",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "71",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "45",
+        "fields": {
+            "product_inventory": "45",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "180",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "46",
+        "fields": {
+            "product_inventory": "46",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "128",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "47",
+        "fields": {
+            "product_inventory": "47",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "12",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "48",
+        "fields": {
+            "product_inventory": "48",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "66",
+            "units_sold": "0"
+        }
+    },
+    {
+        "model": "inventory.stock",
+        "id": "49",
+        "fields": {
+            "product_inventory": "49",
+            "last_checked": "2021-09-01T13:20:30+03:00",
+            "units": "115",
+            "units_sold": "0"
+        }
+    }
+]
